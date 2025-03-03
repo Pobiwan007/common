@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="no_matches_found">No data found</string>
+    <string name="no_internet_error">No internet connection, pls try again later</string>
+    <string name="server_error">We have some problem with server, pls try again later</string>
+    <string name="other_error">Something wrong, we already working to fix it, pls try again later</string>
+    <string name="short_username">Too short</string>
+    <string name="empty_username">Username cannot be empty</string>
+    <string name="long_username">Too long</string>
+
+</resources>
