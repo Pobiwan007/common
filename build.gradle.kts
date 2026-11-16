@@ -1,7 +1,11 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    `maven-publish`
 }
+
+group = "com.github.Pobiwan007"
+version = "1.0.0"
 
 android {
     namespace = "com.common"
@@ -26,6 +30,12 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+        }
+    }
 }
 
 dependencies {
@@ -33,4 +43,13 @@ dependencies {
 
     testImplementation(libs.junit)
     testImplementation(libs.kotlinx.coroutines.test)
+}
+
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            artifactId = "common"
+            afterEvaluate { from(components["release"]) }
+        }
+    }
 }
